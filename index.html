@@ -7,33 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Snowburst+One" rel="stylesheet">
     <script src="./assets/javascript/game.js"></script>
 </head>
-<body>
+<body class="body">
 
-    <header>
-        <h1>Word Game</h1>
+    <header class= "header">
+        <h1 class="title">Can you guess the holiday-themed word?</h1>
+        <img >
 
     </header>
 
-    <section>
+   
+
+
+    <section class="section">
 
         <article>
-            <p> Press any key to get started!</p>
-            <p>Number of wins:</p>
-            <p>Current Word: </p>
-            <p>Number of guesses remaining:</p>
-            <p>Letters already guessed:</p>
+           <div class="text"> 
+                <p> Press any key to get started!</p>
+                <p>Number of wins: <span id="win-win"></span></p>
+                <p>Current Word:<span id="blanks"></span> </p>
+                <p>Number of guesses remaining:<span id="guesses-remaining"></span></p>
+                <p>Letters already guessed:<span id="already-guessed"></span></p>
+            </div>
 
         </article>
 
-        <aside>
+        <!-- <aside>
 
-        </aside>
+              
+            <div class="connect">
+                <h2>Connect with Me</h2>
+            </div>
+            <div class ="contact-info">
+                <a href="https://github.com/kglibrarian"><i class="fa fa-github-alt" aria-hidden="true"style="font-size:36px; color:black";></i><span class="sr-only">GitHub</span></a>
+                <a href="https://stackoverflow.com/users/story/9036480"><i class="fa fa-stack-overflow" aria-hidden="true"style="font-size:36px; color:black";></i><span class="sr-only">Stack Overflow</span></a>
+                <a href="https://twitter.com/kglibrarian"><i class="fa fa-twitter" aria-hidden="true"style="font-size:36px; color:black"></i><span class="sr-only">Twitter</span></a>
+                <a href="https://www.linkedin.com/in/karen-gutzman-33024158/"><i class="fa fa-linkedin" aria-hidden="true" style="font-size:36px; color:black"></i><span class="sr-only">LinkedIn</span></a>
+                <a href="https://www.facebook.com/karen.gutzman"><i class="fa fa-facebook" aria-hidden="true"style="font-size:36px; color:black"></i><span class="sr-only">Facebook</span></a>
+            </div>
+                    
+        </aside> -->
 
     </section>
 
-
+    <footer class="footer">
+            <p>Copyright 2018 Karen Gutzman</p>
+    </footer>
     
 </body>
 </html>
