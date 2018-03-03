@@ -5,6 +5,8 @@ let words = [ "wenceslas", "bethlehem", "angels", "jinglebells", "noel"];
 let lettersGuessed = [];
 let numberSpaces = [];
 let wrongLetters = [];
+guessRemain = 10;
+
 // let i = 10; 
 
 
@@ -71,51 +73,13 @@ document.onkeyup = function(event) {
       console.log(lettersGuessed);
       document.getElementById("already-guessed").innerHTML = lettersGuessed;
       console.log(computerArray.includes(userText));
-    }
-
-  
-  // for (var i=0; i < computerArray.length; i++) {
-  //   if(computerArray[i] === userText) {
-  //     numberSpaces[i] = userText;
-  //     numberSpacesStr = numberSpaces.join(" ");
-  //     document.getElementById("blanks").innerHTML = numberSpacesStr;
-  //   } else {
-  //     lettersGuessed.push(userText);
-  //     console.log(lettersGuessed);
-  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
-  //     console.log(computerArray.includes(userText));
-  //   }
-
-
-  // }
-
-  
-  
-
-//COMPUTER CHECKS FOR LETTER IN WORD AND REPLACES BLANK
-//Run this code as many times as is equal to the length of the computerArray. 
-//If the userText is found in the computerArray, continue on...
-//Create a new varsiable guessIndex that stores the index number of the computerArray that matches the userText. 
-//In the numberSpaces array, find the guessIndex position and replace it with the userText.
-//In the HTML doucment, set the text of the element with the id "blanks" equal to the text in the numberSpaces array.
-
-  // for (i < 10; i < computerArray.length; i++) {
-  //   if(computerArray.includes(userText) === true) {
-  //     guessIndex = computerArray.indexOf(userText);
-  //     numberSpaces[guessIndex] = userText;
-  //     document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+      guessRemain--;
+      document.getElementById("guesses-remaining").innerHTML = guessRemain;
       
-  //   }
-  //   else {
-  //     lettersGuessed.push(userText);
-  //     console.log(lettersGuessed);
-  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
-  //     console.log(computerArray.includes(userText));
-  //   }
-  // }
-
-  
+    }
 }
+
+
 
 
 
@@ -341,5 +305,46 @@ document.onkeyup = function(event) {
   //   if(computerArray.indexOf(userText)) {
   //     numberSpaces[i] == userText;
   //     console.log(numberSpaces[i] == userText);
+  //   }
+  // }
+
+  
+  // for (var i=0; i < computerArray.length; i++) {
+  //   if(computerArray[i] === userText) {
+  //     numberSpaces[i] = userText;
+  //     numberSpacesStr = numberSpaces.join(" ");
+  //     document.getElementById("blanks").innerHTML = numberSpacesStr;
+  //   } else {
+  //     lettersGuessed.push(userText);
+  //     console.log(lettersGuessed);
+  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
+  //     console.log(computerArray.includes(userText));
+  //   }
+
+
+  // }
+
+  
+  
+
+//COMPUTER CHECKS FOR LETTER IN WORD AND REPLACES BLANK
+//Run this code as many times as is equal to the length of the computerArray. 
+//If the userText is found in the computerArray, continue on...
+//Create a new varsiable guessIndex that stores the index number of the computerArray that matches the userText. 
+//In the numberSpaces array, find the guessIndex position and replace it with the userText.
+//In the HTML doucment, set the text of the element with the id "blanks" equal to the text in the numberSpaces array.
+
+  // for (i < 10; i < computerArray.length; i++) {
+  //   if(computerArray.includes(userText) === true) {
+  //     guessIndex = computerArray.indexOf(userText);
+  //     numberSpaces[guessIndex] = userText;
+  //     document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+      
+  //   }
+  //   else {
+  //     lettersGuessed.push(userText);
+  //     console.log(lettersGuessed);
+  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
+  //     console.log(computerArray.includes(userText));
   //   }
   // }
