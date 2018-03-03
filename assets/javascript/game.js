@@ -5,7 +5,8 @@ let words = [ "wenceslas", "bethlehem", "angels", "jinglebells", "noel"];
 let lettersGuessed = [];
 let numberSpaces = [];
 let wrongLetters = [];
-guessRemain = 10;
+let guessRemain = 10;
+let wins = 0; 
 
 // let i = 10; 
 
@@ -59,13 +60,11 @@ for (var i=0; i < computerArray.length; i++) {
 
 document.onkeyup = function(event) { 
   userText = event.key;
-
     if (computerArray.includes(userText) === true) {
       for (var i=0; i < computerArray.length; i++) {
         if (computerArray[i] === userText) {
         numberSpaces[i] = userText; 
-        numberSpacesStr = numberSpaces.join(" ");
-        document.getElementById("blanks").innerHTML = numberSpacesStr;
+        document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
         } 
       }
     } else {
@@ -75,9 +74,24 @@ document.onkeyup = function(event) {
       console.log(computerArray.includes(userText));
       guessRemain--;
       document.getElementById("guesses-remaining").innerHTML = guessRemain;
+    }
+    if (guessRemain === 0 ) {
+      alert("you lose");
       
     }
+    if (computerArray.toString() == numberSpaces.toString()) {
+      wins++;
+      document.getElementById("win-win").innerHTML = wins;
+      
+    } 
+
+
 }
+
+
+
+
+
 
 
 
