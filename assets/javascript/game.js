@@ -31,6 +31,10 @@ let computerArray ;
 
 function init() {
   numberSpaces = [];
+  guessRemain = 10;
+  document.getElementById("guesses-remaining").innerHTML = guessRemain;
+  lettersGuessed = [];
+  document.getElementById("already-guessed").innerHTML = lettersGuessed;
   randomNumber = Math.floor((Math.random() * 5));
   computerChoice = words[randomNumber]; 
   computerArray = Array.from(computerChoice);
@@ -39,7 +43,7 @@ function init() {
     numberSpaces.push("_");
     document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
   }
-
+}
 
 //COMPUTER CHOOSES A RANDOM WORD: 
 //Create a variable randomNumber that stores a random number between 0 and 4. 
@@ -93,19 +97,19 @@ document.onkeyup = function(event) {
       guessRemain--;
       document.getElementById("guesses-remaining").innerHTML = guessRemain;
     }
-    if (guessRemain === 0 ) {
-      alert("you lose");
-      init();
-    }
-    if (computerArray.toString() == numberSpaces.toString()) {
-      wins++;
-      document.getElementById("win-win").innerHTML = wins;
-      init();
-    } 
+  if (guessRemain === 0 ) {
+    // alert("you lose");
+    init();
+  }
+  if (computerArray.toString() == numberSpaces.toString()) {
+    wins++;
+    document.getElementById("win-win").innerHTML = wins;
+    init();
+  } 
 
 
 }
-}
+
 
 
 init();
