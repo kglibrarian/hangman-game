@@ -1,9 +1,14 @@
 
 //Global variables and arrays: 
 let words = [ "wenceslas", "bethlehem", "angels", "jinglebells", "noel"];
-let userGuess = document.getElementById("already-guessed"); 
+// let userGuess = document.getElementById("already-guessed"); 
 let lettersGuessed = [];
 let numberSpaces = [];
+let wrongLetters = [];
+// let i = 10; 
+
+
+// let guessIndex= -1;
 // let userText = "e";
 // let guesses = 10;
 
@@ -38,9 +43,91 @@ console.log(computerArray);
 
 for (var i=0; i < computerArray.length; i++) {
   numberSpaces.push("_");
-  document.getElementById("blanks").innerHTML = numberSpaces;
+  document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
 
 }
+
+//COMPUTER LISTENS FOR KEY PRESS AND STORES AND DISPLAYS LETTER PRESSED:
+//On key event is listening. User presses a key and the event function starts. 
+//The key that was pushed is stored in the userText variable.
+//The userText is pushed into the previously empty array called lettersGuessed.
+//Console log the lettersGuessed array to make sure it contains the key that was pressed.
+//In the HTML document, set the text of the element with the id "already-guessed" to whatever is in the lettersGuessed array. 
+//Console log the a boolean true or false if the userText is in the array called computerArray. 
+
+document.onkeyup = function(event) { 
+  userText = event.key;
+
+    if (computerArray.includes(userText) === true) {
+      for (var i=0; i < computerArray.length; i++) {
+        if (computerArray[i] === userText) {
+        numberSpaces[i] = userText; 
+        numberSpacesStr = numberSpaces.join(" ");
+        document.getElementById("blanks").innerHTML = numberSpacesStr;
+        } 
+      }
+    } else {
+      lettersGuessed.push(userText);
+      console.log(lettersGuessed);
+      document.getElementById("already-guessed").innerHTML = lettersGuessed;
+      console.log(computerArray.includes(userText));
+    }
+
+  
+  // for (var i=0; i < computerArray.length; i++) {
+  //   if(computerArray[i] === userText) {
+  //     numberSpaces[i] = userText;
+  //     numberSpacesStr = numberSpaces.join(" ");
+  //     document.getElementById("blanks").innerHTML = numberSpacesStr;
+  //   } else {
+  //     lettersGuessed.push(userText);
+  //     console.log(lettersGuessed);
+  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
+  //     console.log(computerArray.includes(userText));
+  //   }
+
+
+  // }
+
+  
+  
+
+//COMPUTER CHECKS FOR LETTER IN WORD AND REPLACES BLANK
+//Run this code as many times as is equal to the length of the computerArray. 
+//If the userText is found in the computerArray, continue on...
+//Create a new varsiable guessIndex that stores the index number of the computerArray that matches the userText. 
+//In the numberSpaces array, find the guessIndex position and replace it with the userText.
+//In the HTML doucment, set the text of the element with the id "blanks" equal to the text in the numberSpaces array.
+
+  // for (i < 10; i < computerArray.length; i++) {
+  //   if(computerArray.includes(userText) === true) {
+  //     guessIndex = computerArray.indexOf(userText);
+  //     numberSpaces[guessIndex] = userText;
+  //     document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+      
+  //   }
+  //   else {
+  //     lettersGuessed.push(userText);
+  //     console.log(lettersGuessed);
+  //     document.getElementById("already-guessed").innerHTML = lettersGuessed;
+  //     console.log(computerArray.includes(userText));
+  //   }
+  // }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 //------------------------------------------------------
 // OLD VERSION OF CODE ABOVE: problem is that we set the computerArray to _ so when checking for userText, it was always false. 
@@ -55,34 +142,13 @@ for (var i=0; i < computerArray.length; i++) {
 
 //-------------------------------------------------------
 
-//COMPUTER LISTENS FOR KEY PRESS AND STORES AND DISPLAYS LETTER PRESSED:
-//1. Onkey event is listening. User presses a key and the event function starts. 
-//2. The key that was pushed is stored in the userText variable.
-//3. The userText is pushed into the previously empty array called lettersGuessed.
-//4. Console log the lettersGuessed array to make sure it contains the key that was pressed.
-//5. In the HTML document, set the text of the element with the id "already-guessed" to whatever is in the lettersGuessed array. 
-//6. Console log the a boolean true or false if the userText is in the array called computerArray. 
 
-document.onkeyup = function(event) { 
-  userText = event.key;  
-  lettersGuessed.push(userText);
-  console.log(lettersGuessed);
-  document.getElementById("already-guessed").innerHTML = lettersGuessed;
-  console.log(computerArray.includes(userText));
 
-//COMPUTER CHECKS FOR LETTER IN WORD AND REPLACES BLANK
 
-  for (var i=0; i < computerArray.length; i++) {
-    if(computerArray.includes(userText) === true) {
-      guessIndex = computerArray.indexOf(userText);
-         
-      numberSpaces[guessIndex] = userText;
-      // numberString = numberSpaces.join(" ");
-      // console.log(numberSpaces[guessIndex]) = userText;
-      document.getElementById("blanks").textContent = numberSpaces;
-    }
-  }
-}
+
+
+
+
 
 // if (computerChoice.indexOf(userKey) === true) {
 //   guessIndex = computerChoice.indexOf(userkey);
@@ -91,9 +157,9 @@ document.onkeyup = function(event) {
 // dashGuess[guessIndex] = userKey;
 
 //Code below does this: 
-//11. When the window loads, begin the event function. 
-//12. Create a variable numberSpaces that fills _ in place of the values in the computerArray.
-//13. Console log the computerArray filled with blanks. It should be an array of blanks the same length as the letters from the word
+//When the window loads, begin the event function. 
+//Create a variable numberSpaces that fills _ in place of the values in the computerArray.
+//Console log the computerArray filled with blanks. It should be an array of blanks the same length as the letters from the word
 // that was randomly chosen from the words array. 
 //14. In the HTML docoument, set the text of element with the id = to "blanks" to whatever is in the numberSpaces array (which should be blank lines).
 

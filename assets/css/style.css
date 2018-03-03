@@ -9,6 +9,13 @@ h1 {
     
 }
 
+h2 {
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
 .body {
     display:flex;
     flex-direction: column;
@@ -29,11 +36,34 @@ h1 {
 
 .title {
     text-align: center;
-    color: black;
+    color: white;
     padding: 20px 20px 20px 20px;
 }
 
+.name {
+    background-color: #4AAAA5;
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
 
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    padding: 20px;
+    border-right: 1px solid #cccccc;
+}
+
+nav a:last-child {
+    border:none;
+}
+
+nav a:link {
+    color: #777777;
+}
 .section {
     display: flex;
     text-align: center;
@@ -107,9 +137,22 @@ p {
     bottom: 0;
     margin: auto auto 0 auto;
     width: 100%;
-    /*position: fixed;*/
+    /* position: fixed; */
 
 }
+
+.button {
+    background-color: #4aaaa5; 
+    border: none;
+    color: white;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto auto 0 auto;
+}
+
 
 
 
