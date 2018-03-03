@@ -7,6 +7,9 @@ let numberSpaces = [];
 let wrongLetters = [];
 let guessRemain = 10;
 let wins = 0; 
+let randomNumber ;
+let computerChoice ;
+let computerArray ;
 
 // let i = 10; 
 
@@ -23,20 +26,35 @@ let wins = 0;
 
 //BEGIN HERE ---------------------------------------------------------------
 
+// Addded from Scott
+
+
+function init() {
+  numberSpaces = [];
+  randomNumber = Math.floor((Math.random() * 5));
+  computerChoice = words[randomNumber]; 
+  computerArray = Array.from(computerChoice);
+  console.log(computerArray);
+  for (var i=0; i < computerArray.length; i++) {
+    numberSpaces.push("_");
+    document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+  }
+
+
 //COMPUTER CHOOSES A RANDOM WORD: 
 //Create a variable randomNumber that stores a random number between 0 and 4. 
 //Create a variable computerChoice that stores the word from the words array that has the index value of the random number that was chosen above. 
 
-var randomNumber = Math.floor((Math.random() * 5));
-let computerChoice = words[randomNumber]; 
+// var randomNumber = Math.floor((Math.random() * 5));
+// let computerChoice = words[randomNumber]; 
 // console.log(Array.from(computerChoice));
 
 //COMPUTER CREATES ARRAY OF RANDOM WORD: 
 //Create a variable computerArray that holds a new array that was created from the computerChoice array above. 
 //Console log the computerArray. It should be an array of the letters from the word that was chosen randomly from the words array. 
 
-let computerArray = Array.from(computerChoice);
-console.log(computerArray);
+// let computerArray = Array.from(computerChoice);
+// console.log(computerArray);
 
 //CCOMPUTER MAKES BLANKS SPACES FOR WORD:
 //Run this code as many times as is equal to the length of the computerArray.
@@ -44,11 +62,11 @@ console.log(computerArray);
 //In the HTML docoument, set the text of element with the id = to "blanks" to whatever is in the numberSpaces array (which should be blank lines).
 
 
-for (var i=0; i < computerArray.length; i++) {
-  numberSpaces.push("_");
-  document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+// for (var i=0; i < computerArray.length; i++) {
+//   numberSpaces.push("_");
+//   document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
 
-}
+// }
 
 //COMPUTER LISTENS FOR KEY PRESS AND STORES AND DISPLAYS LETTER PRESSED:
 //On key event is listening. User presses a key and the event function starts. 
@@ -77,17 +95,20 @@ document.onkeyup = function(event) {
     }
     if (guessRemain === 0 ) {
       alert("you lose");
-      
+      init();
     }
     if (computerArray.toString() == numberSpaces.toString()) {
       wins++;
       document.getElementById("win-win").innerHTML = wins;
-      
+      init();
     } 
 
 
 }
+}
 
+
+init();
 
 
 
