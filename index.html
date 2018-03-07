@@ -5,65 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Word Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Snowburst+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css"/>
     <script src="https://use.fontawesome.com/8f1724fac3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     
 </head>
+
 <body class="body">
-    <header class= "header">
-       <div class="name">
-            <h1 class="title">Can you guess the holiday-themed word?</h1>
-        <img >
-      </div>
-        <nav class="nav">
-            <a href="./index.html">About</a>
-            <a href="./portfolio.html">Portfolio</a>
-            <a href="./contact.html">Contact</a>
-        </nav>
-
-    </header>
-
-   
-
-
-    <section class="section">
-
-        <article class="article">
-           <div class="text"> 
-                <p> Press any key to get started!</p>
-                <p>Number of wins: <span id="win-win"></span></p>
-                <p>Current Word: <span id="blanks"></span> </p>
-                <p>Number of guesses remaining: <span id="guesses-remaining"></span></p>
-                <p>Letters already guessed: <span id="already-guessed"></span></p>
+        <header class= "d-flex justify-content-around "> 
+            <div class="title">
+                <h1>Guess the holiday-themed word</h1>
+                <h2> Press any key to get started...</h2>
             </div>
-
-        </article>
-
-        <aside>
-
-              
-            <div class="connect">
-                <h2>Connect with Me</h2>
-            </div>
-            <div class ="contact-info">
-                <a href="https://github.com/kglibrarian"><i class="fa fa-github-alt" aria-hidden="true"style="font-size:36px; color:black";></i><span class="sr-only">GitHub</span></a>
-                <a href="https://stackoverflow.com/users/story/9036480"><i class="fa fa-stack-overflow" aria-hidden="true"style="font-size:36px; color:black";></i><span class="sr-only">Stack Overflow</span></a>
-                <a href="https://twitter.com/kglibrarian"><i class="fa fa-twitter" aria-hidden="true"style="font-size:36px; color:black"></i><span class="sr-only">Twitter</span></a>
-                <a href="https://www.linkedin.com/in/karen-gutzman-33024158/"><i class="fa fa-linkedin" aria-hidden="true" style="font-size:36px; color:black"></i><span class="sr-only">LinkedIn</span></a>
-                <a href="https://www.facebook.com/karen.gutzman"><i class="fa fa-facebook" aria-hidden="true"style="font-size:36px; color:black"></i><span class="sr-only">Facebook</span></a>
-            </div>
-                    
-        </aside>
-
-    </section>
-
-    <footer class="footer">
-            <p>Copyright 2018 Karen Gutzman</p>
-    </footer>
+                
+        </header>
     
-    <script src="./assets/javascript/game.js"></script>
-</body>
+        <section class="section container">
+            <div class="row spacing">
+           
+            <article class="article card col-xs-12 col-sm-12 col-md-12 col-lg-6 offset-lg-6">
+               <div class="text card-body d-flex flex-column"> 
+                   <p>Current Word: <span id="blanks"></span> </p>
+                   <p>Letters already guessed: <span id="already-guessed"></span></p>
+                </div>
+                </div>
+            </article>
+            <div class="row spacing">
+                <aside class="aside card col-xs-12 col-sm-12 col-md-12 col-lg-6 offset-lg-6">
+                    <div class=" card-body">
+                        <p>Number of wins: <span id="win-win"></span></p>
+                        <p>Number of guesses remaining: <span id="guesses-remaining"></span></p>
+                    </div>
+                </aside>
+            </div>
+            
+        </section>
+    
+        <footer class="footer">
+                <p>Copyright 2018 Karen Gutzman</p>
+        </footer>
+       
+        <script src="./assets/javascript/game.js"></script>
+    </body>
+
+
 </html>

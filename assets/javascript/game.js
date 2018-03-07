@@ -1,7 +1,6 @@
 
 //Global variables and arrays: 
 let words = [ "wenceslas", "bethlehem", "angels", "jinglebells", "noel"];
-// let userGuess = document.getElementById("already-guessed"); 
 let lettersGuessed = [];
 let numberSpaces = [];
 let wrongLetters = [];
@@ -12,7 +11,7 @@ let computerChoice ;
 let computerArray ;
 
 // let i = 10; 
-
+// let userGuess = document.getElementById("already-guessed"); 
 
 // let guessIndex= -1;
 // let userText = "e";

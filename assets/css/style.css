@@ -2,7 +2,98 @@
  font-family: 'Mountains of Christmas', cursive;
  font-family: 'Snowburst One', cursive; */
 
-h1 {
+ h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: black;
+    
+}
+
+h2 {
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    
+}
+
+.spacing {
+    margin: 2em;
+}
+
+.aside {
+    background-color: white;
+
+}
+
+
+.text {
+    background-color: white;
+}
+
+.body {
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777; 
+    background-image: url(../images/christmas-3006743_1920.jpg)
+   
+}
+
+p {
+    line-height: 1.5em;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #666666;
+    border-top: 5px solid darkgreen;
+    text-align: center;
+    color: #ffffff;
+    height: 50px;
+    bottom: 0;
+    margin: auto auto 0 auto;
+    width: 100%;
+    position: fixed;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonts: 
+ font-family: 'Mountains of Christmas', cursive;
+ font-family: 'Snowburst One', cursive; */
+
+/* h1 {
     font-family: 'Snowburst One', cursive;
     font-size: 24px;
     font-weight: bold;
@@ -73,18 +164,18 @@ nav a:link {
     border-top: 1px solid #CCCCCC;
     
   
-}
+} */
 
-.article {
+/* .article {
     /* background-color: #ffffff; */
-    width: 650px;
+    /* width: 650px;
     padding: 20px;
     margin-right: 10px;
     text-align: left;
     
-}
+} */ 
 
-.text {
+/* .text {
     margin-top: 20px;
 }
 
@@ -126,9 +217,9 @@ p {
     flex-direction: row;
     justify-content: space-around;
     padding-top: 10px;
-}
+} */
 
-.footer {
+/* /* .footer {
     background-color: #666666;
     border-top: 5px solid #4aaaa5;
     text-align: center;
@@ -139,9 +230,9 @@ p {
     width: 100%;
     /* position: fixed; */
 
-}
+/* }  */ 
 
-.button {
+/* .button {
     background-color: #4aaaa5; 
     border: none;
     color: white;
@@ -151,7 +242,7 @@ p {
     display: inline-block;
     font-size: 16px;
     margin: auto auto 0 auto;
-}
+} */
 
 
 
@@ -161,19 +252,19 @@ p {
 ---------------------*/
 
 /* These rules take effect when the browser's width is 768px or less. */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     
     .section {
         display: flex;
         /* text-align: center; */
-        flex-direction: column;
+        /* flex-direction: column;
         justify-content: center;
         padding-top: 20px;
         border-top: 1px solid #CCCCCC;
         
-    }
+    } */ 
 
-    .article {
+    /* .article {
         background-color: #ffffff;
         width: auto;
         padding: 20px;
@@ -194,11 +285,11 @@ p {
         height: 150px;
      }
      
-}
+} */
 
 /* These rules take effect when the browser's width is 640px or less. */
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
 
     .header{
         display: flex;
@@ -219,19 +310,19 @@ p {
         display: flex;
         justify-content: space-around;
         /* align-items: center; */
-    }
+    /* }
 
     .section {
         display: flex;
         /* text-align: center; */
-        flex-direction: column;
+        /* flex-direction: column;
         justify-content: center;
         padding-top: 20px;
         border-top: 1px solid #CCCCCC;
         
-    }
+    } */ 
 
-    .article {
+    /* .article {
         background-color: #ffffff;
         width: auto;
         padding: 20px;
@@ -253,11 +344,11 @@ p {
      }
      
 
-}
+} */
 
 /* These rules take effect when the browser's width is 940px or less. */
 
-@media screen and (min-width: 769px) and (max-width: 980px) {
+/* @media screen and (min-width: 769px) and (max-width: 980px) {
     
     .article {
         background-color: #ffffff;
@@ -273,19 +364,19 @@ p {
         display: flex;
         margin-top: 20px;
         flex-direction: column;
-    }
+    } */
     
     /* Note that .profile-image is a new class. Previous styling was done on .image instead. */
-    .profile-image {
+    /* .profile-image {
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
         width: auto;
         height:250px;
     }
-    
+     */
     
 
-}
+/* } */
     
     
