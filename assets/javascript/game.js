@@ -10,22 +10,21 @@ let randomNumber ;
 let computerChoice ;
 let computerArray ;
 
-// let i = 10; 
-// let userGuess = document.getElementById("already-guessed"); 
+//Functions ------------------------------------------
 
-// let guessIndex= -1;
-// let userText = "e";
-// let guesses = 10;
+//COMPUTER CHOOSES A RANDOM WORD: 
+//Create a variable randomNumber that stores a random number between 0 and 4. 
+//Create a variable computerChoice that stores the word from the words array that has the index value of the random number that was chosen above. 
 
-//Still need to figure out -----------------------------------------------
+//COMPUTER CREATES ARRAY OF RANDOM WORD: 
+//Create a variable computerArray that holds a new array that was created from the computerChoice array above. 
+//Console log the computerArray. It should be an array of the letters from the word that was chosen randomly from the words array. 
 
-//Number of guesses is displayed as 10.
-// Letters already guessed is cleared. 
+//CCOMPUTER MAKES BLANKS SPACES FOR WORD:
+//Run this code as many times as is equal to the length of the computerArray.
+//Push a blank _ into the previously empty numberSpaces array each tiem the code is run.
+//In the HTML docoument, set the text of element with the id = to "blanks" to whatever is in the numberSpaces array (which should be blank lines).
 
-
-//BEGIN HERE ---------------------------------------------------------------
-
-// Addded from Scott
 
 
 function init() {
@@ -43,6 +42,52 @@ function init() {
     document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
   }
 }
+
+//Events-------------------------
+//COMPUTER LISTENS FOR KEY PRESS AND STORES AND DISPLAYS LETTER PRESSED:
+//On key event is listening. User presses a key and the event function starts. 
+//The key that was pushed is stored in the userText variable.
+//The userText is pushed into the previously empty array called lettersGuessed.
+//Console log the lettersGuessed array to make sure it contains the key that was pressed.
+//In the HTML document, set the text of the element with the id "already-guessed" to whatever is in the lettersGuessed array. 
+//Console log the a boolean true or false if the userText is in the array called computerArray. 
+
+document.onkeyup = function(event) { 
+  let userText = event.key.toLowerCase();
+    if (computerArray.includes(userText) === true) {
+      for (var i=0; i < computerArray.length; i++) {
+        if (computerArray[i] === userText) {
+        numberSpaces[i] = userText; 
+        document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
+        } 
+      }
+    } else {
+      lettersGuessed.push(userText);
+      console.log(lettersGuessed);
+      document.getElementById("already-guessed").innerHTML = lettersGuessed;
+      console.log(computerArray.includes(userText));
+      guessRemain--;
+      document.getElementById("guesses-remaining").innerHTML = guessRemain;
+    }
+  if (guessRemain === 0 ) {
+    // alert("you lose");
+    init();
+  }
+  if (computerArray.toString() == numberSpaces.toString()) {
+    wins++;
+    document.getElementById("win-win").innerHTML = wins;
+    init();
+  } 
+
+
+}
+
+
+
+init();
+
+
+//Older versions of this code: 
 
 //COMPUTER CHOOSES A RANDOM WORD: 
 //Create a variable randomNumber that stores a random number between 0 and 4. 
@@ -78,44 +123,6 @@ function init() {
 //Console log the lettersGuessed array to make sure it contains the key that was pressed.
 //In the HTML document, set the text of the element with the id "already-guessed" to whatever is in the lettersGuessed array. 
 //Console log the a boolean true or false if the userText is in the array called computerArray. 
-
-document.onkeyup = function(event) { 
-  userText = event.key;
-    if (computerArray.includes(userText) === true) {
-      for (var i=0; i < computerArray.length; i++) {
-        if (computerArray[i] === userText) {
-        numberSpaces[i] = userText; 
-        document.getElementById("blanks").innerHTML = numberSpaces.join(" ");
-        } 
-      }
-    } else {
-      lettersGuessed.push(userText);
-      console.log(lettersGuessed);
-      document.getElementById("already-guessed").innerHTML = lettersGuessed;
-      console.log(computerArray.includes(userText));
-      guessRemain--;
-      document.getElementById("guesses-remaining").innerHTML = guessRemain;
-    }
-  if (guessRemain === 0 ) {
-    // alert("you lose");
-    init();
-  }
-  if (computerArray.toString() == numberSpaces.toString()) {
-    wins++;
-    document.getElementById("win-win").innerHTML = wins;
-    init();
-  } 
-
-
-}
-
-
-
-init();
-
-
-
-
 
 
 
